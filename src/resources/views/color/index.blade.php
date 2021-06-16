@@ -61,6 +61,7 @@
                                 @endforelse
                                 </tbody>
                             </table>
+                            {{$colors->links()}}
                         </div>
                     </div>
                 </div>

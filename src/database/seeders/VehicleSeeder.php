@@ -86,5 +86,17 @@ class VehicleSeeder extends Seeder
             'photo' => 'hb20.jpg',
             'optionals' => 'Combustível: Flex, Licenciado, Km rodados: 41.490, Encosto de Cabeça Traseiro, Computador a bordo, Câmbio Manual'
         ]);
+        DB::table('vehicle')->insert([
+            'model' => 'QQ 1.0 MPFI LOOK 12V FLEX 4P MANUAL 2020',
+            'yearmodel' => 2020,
+            'yearmanufacture' => 2019,
+            'brand_id'=> 6,
+            'type' => 'new',
+            'color_id' => 7,
+            'price' => 35990.00,
+            'user_id' => 1,
+            'photo' => 'cherry-azul.jpg',
+            'optionals' => 'Combustível : Gasolina, Ar condicionado, Alarme, Câmbio Manual, 4 portas'
+        ]);
     }
 }
