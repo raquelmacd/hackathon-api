@@ -63,3 +63,29 @@ docker container exec -u 1000 laravel php artisan migrate:fresh --seed
 ```sh
 docker container exec -u 1000 laravel php artisan storage:link
 ```
+
+### How to get the default pagination from Laravel?
+
+1. Execute the command below
+```sh
+docker container exec -u 1000 laravel php artisan vendor:publish --tag=laravel-pagination
+```
+2. Go to App/Providers/AppServiceProvider file
+
+3. Add the code
+```php
+use Illuminate\Pagination\Paginator;
+public function boot()
+    {
+        Paginator::defaultView('vendor.pagination.bootstrap-4');
+    }
+```
+4. Call paginate on your Controllers.
+Example: 
+```php
+$vehicles = Vehicle::paginate(5);
+```
+5. Set the links on view after table tag
+```php
+{{ $vehicles->links() }}
+```
