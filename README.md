@@ -85,7 +85,7 @@ Example:
 ```php
 $vehicles = Vehicle::paginate(5);
 ```
-5. Set the links on view after </table> tag
+5. Set the links on view after table tag
 ```php
 {{ $vehicles->links() }}
 ```
