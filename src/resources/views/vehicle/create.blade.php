@@ -40,7 +40,7 @@
             </div>
             <div class="col">
                 <label for="price">Preço</label>
-                <input type="text" class="form-control" id="price" required name="price" onkeyup="formatarMoeda()" value="{{ old('price')}}" >
+                <input type="text" class="form-control" id="price"  name="price" onkeyup="formatarMoeda()" value="{{ old('price')}}" >
             </div>
             <div class="col">
                 <label for="brand_id">Marca</label>

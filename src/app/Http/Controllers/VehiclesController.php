@@ -17,7 +17,7 @@ class VehiclesController extends Controller
      */
     public function index()
     {
-        $vehicles = Vehicle::all();
+        $vehicles = Vehicle::paginate(5);
         
         return view('vehicle.index', [
             'vehicles' => $vehicles
@@ -49,6 +49,12 @@ class VehiclesController extends Controller
      */
     public function store(Request $request)
     {
+        $validacao = $request->validate([
+            'model' => 'required',
+            'yearmodel' => 'required',
+            'price' => 'required',
+        ]);
+
         $nameFile = null;
         $name = uniqid(date('HisYmd'));
         $extension = $request->photo->getClientOriginalExtension();
